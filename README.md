@@ -19,17 +19,29 @@ It never removes Windows Security, drivers, the Store, winget, Terminal, runtime
 
 ## Install
 
-**Claude desktop / claude.ai:** download `windows-debloat.skill` from [Releases](../../releases) and click **Save skill**, or upload this folder as a zip under *Settings → Capabilities → Skills*.
+**Claude Code (plugin marketplace).** Run this inside a session:
 
-**Claude Code:**
+```
+/plugin marketplace add ArmenSl/windows-debloat
+/plugin install windows-debloat@armensl-plugins
+```
+
+Or run this from your shell:
 
 ```bash
-git clone https://github.com/ArmenSl/windows-debloat ~/.claude/skills/windows-debloat
+claude plugin marketplace add ArmenSl/windows-debloat
+claude plugin install windows-debloat@armensl-plugins
 ```
+
+Update later with `claude plugin update windows-debloat@armensl-plugins`.
+
+**Claude desktop / claude.ai:** download `windows-debloat.skill` from [Releases](https://github.com/ArmenSl/windows-debloat/releases/latest) and click **Save skill**.
 
 ## Use the scripts on their own
 
 ```powershell
+cd skills\windows-debloat
+
 # Read-only report
 powershell -NoProfile -ExecutionPolicy Bypass -File scripts\survey.ps1
 
@@ -44,10 +56,12 @@ Remove `-DryRun` to actually uninstall. You get one admin (UAC) prompt, and the 
 
 | File | Purpose |
 |---|---|
-| `SKILL.md` | The workflow Claude follows |
-| `scripts/survey.ps1` | Read-only system survey |
-| `scripts/elevated-uninstall.ps1` | Resolves and runs uninstalls under one admin prompt |
-| `references/bloat-catalog.md` | What counts as bloat, what to keep, exit codes |
+| `.claude-plugin/plugin.json` | Plugin manifest |
+| `.claude-plugin/marketplace.json` | Lets Claude Code install this repo by name |
+| `skills/windows-debloat/SKILL.md` | The workflow Claude follows |
+| `skills/windows-debloat/scripts/survey.ps1` | Read-only system survey |
+| `skills/windows-debloat/scripts/elevated-uninstall.ps1` | Resolves and runs uninstalls under one admin prompt |
+| `skills/windows-debloat/references/bloat-catalog.md` | What counts as bloat, what to keep, exit codes |
 
 ## Disclaimer
 

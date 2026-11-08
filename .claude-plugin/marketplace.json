@@ -1,0 +1,12 @@
+{
+  "name": "armensl-plugins",
+  "description": "Claude plugins by ArmenSl",
+  "owner": { "name": "ArmenSl", "url": "https://github.com/ArmenSl" },
+  "plugins": [
+    {
+      "name": "windows-debloat",
+      "source": "./",
+      "description": "Safely debloat a Windows 10/11 PC and prepare it as a server or agent machine."
+    }
+  ]
+}
