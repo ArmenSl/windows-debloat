@@ -24,7 +24,7 @@ It never removes Windows Security, drivers, the Store, winget, Terminal, runtime
 **Claude Code:**
 
 ```bash
-git clone https://github.com/ArmenSL/windows-debloat ~/.claude/skills/windows-debloat
+git clone https://github.com/ArmenSl/windows-debloat ~/.claude/skills/windows-debloat
 ```
 
 ## Use the scripts on their own
